@@ -1,15 +1,15 @@
 # Website monitoring application
 
-This is a very simple web application to monitor the status of websites.
+This is a very simple web application to monitor the status of websites, built with the full *MEAN (Mongo,Express,Angular,Node)* application stack.
 
 Features:
-    - Web interface to add, remove and edit websites to follow,
-    - Monitor the HTTP Status Code of each site
-    - View the status of Keyword search on each site
+- Web interface to add, remove and edit websites to follow,
+- Monitor the HTTP Status Code of each site
+- View the status of Keyword search on each site
 
-Since i built it to be hosted on a home server, there are no logins or anything that resembles security measures.
+Since i built this thing to be hosted on my home server, there are no logins or anything that resembles security measures.
 
-It was built with the full *MEAN (Mongo,Express,Angular,Node)* application stack.
+
 
 ### How to Install and Deploy
 
@@ -18,20 +18,22 @@ The front-end library, *Angularjs*, is loaded from Google API from the client si
 
 Commands required to get the app running the first time, assuming that Node.js and MongoDB are in the same machine.
 ```bash
-        sudo apt-get install mongodb
-        sudo apt-get install nodejs
-        npm -g install express
+		sudo apt-get install mongodb
+		sudo apt-get install nodejs
+		npm -g install express
 
-        # git clone ...
-        cd <reponame>
-        npm init # creates the folder node_modules
-        npm install # installs the dependencies
+		# git clone ...
+		cd <reponame>
+		npm init # creates the folder node_modules
+		npm install # installs the dependencies
 
-        # start the application
-        npm start
+		# start the application
+		npm start
 ```
 
-```
+How the Node connects with MongoDB on *localhost*
+```javascript
+		mongoose.connect('mongodb://localhost/site_monitordb');
 ```
 
 ## Built With
@@ -41,7 +43,7 @@ Commands required to get the app running the first time, assuming that Node.js a
 * Angular2 - 1.5.7
 * MongoDB - 3.0.9
 
-## Improvments
+## Improvements
 
 - get whois information to get remaining time of a domain register
 - add logs and graphics to analyse them
