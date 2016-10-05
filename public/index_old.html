@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="javascripts/app.js"></script>
+    </head>
+    <body ng-app="MyCtrlDemo">
+
+        <p>This is your first angular expression: {{ "hello" +  " world" }}</p>
+
+        <br>
+        Enter name: <input type="text" ng-model="name"></input>
+        <p>Hello {{ name | uppercase }} !</p>
+
+        <br>
+        <div ng-controller="MyCtrl">
+            <button ng-click="toggle()">Toggle</button>
+            <p ng-show="visible">Hello world again!</p>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="javascripts/app.js"></script>
+        <link rel="stylesheet" href="stylesheets/style.css">
+
+        <!-- This will refresh page in every 5 seconds, change content= x to refresh page after x seconds -->
+        <meta http-equiv="refresh" content="30" />
+
+    </head>
+    <body ng-app="WebMonitor">
+        <h1>Monitoring Tool</h1>
+        <div>
+            <h3 ng-controller="allSitesGET"> {{ totalSites }} websites being monitored</h3>
+            <div class="listheader">
+                <div class="name">
+                    Name of the website
+                </div>
+                <div class="cur_http_status">
+                    HTTP Status
+                </div>
+                <div class="keyword_exists">
+                    Keyword Exists ??
+                </div>
+            </div>
+        </div>
+        <ul ng-controller="allSitesGET" id="sitelist">
+            <li ng-repeat="site in sites" class="sitesingle">
+                <span class="name">
+                    {{ site.name | uppercase }}
+                </span>
+                <span ng-style="setStatusColor(site)" class="cur_http_status">
+                    {{ site.cur_http_status }}
+                </span>
+                <span class="keyword_exists">
+                    {{ site.keyword_exists }}
+                </span>
+            </li>
+        </ul>
+
+        <button ng-click="toggle()" id="toggle" ng-controller="toggleFORM">
+            Monitor new site &#8681;
+        </button>
+
+        <form ng-submit="submit()" ng-controller="addNewSiteCONTROLLER" id="form_add_new_site" class="ng-hide">
+            <label for="name">
+                Add the website name
+                <input id="name" name="name" ng-model="name" type="text" autofocus placeholder="Example.com" required>
+            </label>
+            <label for="url">
+                Add the website URL
+                <input id="url" name="url" ng-model="url" type="text" placeholder="www.example.com" required>
+            </label>
+            <label for="keyword">
+                Add a keyword
+                <input id="keyword" name="keyword" ng-model="keyword" type="text" placeholder="some word" required>
+            </label>
+            <input type="submit" id="submit">
+        </form>
+
+    </body>
+</html>
