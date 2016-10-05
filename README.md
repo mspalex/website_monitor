@@ -36,6 +36,10 @@ How the Node connects with MongoDB on *localhost*
 		mongoose.connect('mongodb://localhost/site_monitordb');
 ```
 
+Here is a sample image of the interface.
+
+![website_mon_screenshot](https://cloud.githubusercontent.com/assets/4175297/19132525/c461e04e-8b4b-11e6-85b2-c00d4740bfe3.png)
+
 ## Built With
 
 * Node-js - v5.6.0
