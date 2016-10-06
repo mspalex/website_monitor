@@ -1,3 +1,4 @@
 node_modules/
 DEVNOTES.md
 *.*~
+*.log

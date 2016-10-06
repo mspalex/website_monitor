@@ -6,7 +6,11 @@ var mongoose = require('mongoose'), //mongo connection
 // in order to be used upon site creation and
 // to be called by a function that traverses all
 // so that two uses can be applied to the same feature
-exports.verifySiteStatus = function (){
+// exports.verifySingleSiteStatus = function (site){
+//     mongoose.model('Site').find({}, function (err, sites) {
+// }
+
+exports.verifyAllSitesStatus = function (){
 
     // GET ALL THE SITES
     mongoose.model('Site').find({}, function (err, sites) {

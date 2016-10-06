@@ -25,8 +25,8 @@ var httpTOOL = require('../tools/http_get.js');
 router.get('/', function(req, res, next) {
 
     // to serve the updated info after an insert
-    // httpTOOL.verifySiteStatus();
 
+    httpTOOL.verifySiteStatus();
     mongoose.model('Site').find({}, function (err, sites) {
         if (err) {
             res.send(console.error(err));
@@ -74,13 +74,13 @@ router.post('/new', function(req, res, next) {
         if (err) {
             console.log("DEBUG: "+err);
             res.send("There was a problem adding the information to the database.");
+            httpTOOL.verifySiteStatus();
         } else {
             // console.log('POST creating new site: ' + site);
             res.send('POST creating new site: ' + site.name);
         }
     });
 
-    httpTOOL.verifySiteStatus();
 
 });
 

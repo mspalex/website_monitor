@@ -38,7 +38,7 @@ How the Node connects with MongoDB on *localhost*
 
 Here is a sample image of the interface.
 
-![website_mon_screenshot](https://cloud.githubusercontent.com/assets/4175297/19132525/c461e04e-8b4b-11e6-85b2-c00d4740bfe3.png)
+![website_mon_screenshot](https://cloud.githubusercontent.com/assets/4175297/19163838/756b1154-8bf5-11e6-9124-f1c7242d94e6.png)
 
 ## Built With
 
