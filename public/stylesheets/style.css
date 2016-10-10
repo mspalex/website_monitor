@@ -1,19 +1,70 @@
+html{
+    width: 100%;
+}
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+h1{
+    margin: 0;
+}
 a {
   color: #00B7FF;
 }
 
-/*
+/*************************************************
+    base content box
+**************************************************/
+#content{
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    min-height: 350px;
+}
+
+
+/**************************************************
+NAVIGATION AND TOP ELEMENTS rules
+**************************************************/
+div#top_content nav{
+
+}
+
+div#top_content nav li{
+    display: inline-block;
+    /*text-decoration: none;*/
+    height: 30px;
+    border-bottom: 1px solid black;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+div#top_content nav li:hover{
+    background: #efefef;
+}
+
+div#top_content nav li a{
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+
+/*************************************************
     rules that style the add site FORM
-*/
-input[type=text], select {
+**************************************************/
+form label{
+    font-size: 12px;
+    font-weight: bold;
+    /*margin: 8px 0 10px 0;*/
+}
+
+input[type=text], input[type=url], select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 8px 20px;
+    margin: 8px 0 16px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -33,20 +84,22 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-/*div {
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    /*padding: 20px;
-}*/
+input[type=submit] {
+    background-color: #45a049;
+    font-size: 12px;
+    font-weight: bold;
+}
 
 #form_add_new_site{
-    width: 300px;
+    /*width: 300px;*/
     display: block;
-    background: #ddd;
+    background: #eee;
     padding: 20px;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 
 button#toggle{
@@ -63,14 +116,18 @@ button#toggle{
 }
 
 
-/*
+/**************************************************
     RULES TO STYLE THE "TABLE" HEADER
-*/
+**************************************************/
+/*ul#sitelist, div.listheader{
+    width: 100%;
+}*/
 div.listheader{
-    /*width: 500px;*/
+    width: 100%;
     display: inline-block;
     /*margin-bottom: 10px;*/
-    padding: 10px 10px 5px 10px;
+    /*padding: 10px 10px 5px 10px;*/
+    padding: 10px 0;
     border-radius: 3px 3px 0 0;
     background: #eee;
 }
@@ -81,33 +138,37 @@ div.listheader div{
     line-height: 30px;
     text-align: center;
     vertical-align: middle;
+    margin-left: 5px;
 }
-div.listheader div.name{
-    width: 215px;
+
+/**************************************************
+    WIDTHS OF HEADERS AND EACH SITES FIELD
+**************************************************/
+div.listheader div.name, li.sitesingle span.name{
+    width: 200px;
 }
-div.listheader div.cur_http_status{
-    width: 110px;
+div.listheader div.cur_http_status, li.sitesingle span.cur_http_status{
+    width: 120px;
 }
-div.listheader div.keyword_exists{
-    width: 185px;
+div.listheader div.keyword_exists, li.sitesingle span.keyword_exists{
+    width: 170px;
 }
 
 
-/*
-unordered list that will contain the sites listing
-*/
+/**************************************************
+    unordered list that will contain the sites listing
+**************************************************/
 
 ul#sitelist{
-    width: 510px;
     padding: 5px 10px 10px 10px;
     background: #eee;
     border-radius: 0 0 3px 3px;
     margin: 0 !important;
 }
 
-/*
-    RULES TO STYLE EACH INDIVIDUAL SITE LINE WITHIN LISTING
-*/
+/**************************************************
+    INDIVIDUAL SITES WITHIN LISTING
+/**************************************************/
 li.sitesingle{
     list-style: none;
     font-weight: bold;
@@ -123,12 +184,19 @@ li.sitesingle span{
     line-height: 35px;
     vertical-align: middle;
 }
-li.sitesingle span.name{
-    width: 215px;
+
+#rbutton{
+    width: 90px;
 }
-li.sitesingle span.cur_http_status{
-    width: 110px;
-}
-li.sitesingle span.keyword_exists{
-    width: 185px;
+
+button.remove_site{
+    float: right;
+    background-color: #f44336;
+
+    font-size: 10px;
+    color: white;
+    vertical-align: middle;
+    line-height: 31px;
+    padding: 0 7px;
+    /*margin-left: 20px;*/
 }

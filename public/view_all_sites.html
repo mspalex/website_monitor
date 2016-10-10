@@ -1,0 +1,31 @@
+<div>
+    <div class="listheader">
+        <div class="name">
+            Website Name
+        </div>
+        <div class="cur_http_status">
+            HTTP Status Code
+        </div>
+        <div class="keyword_exists">
+            Keyword Exists ??
+        </div>
+    </div>
+</div>
+<ul ng-controller="getAllSites" id="sitelist">
+    <li ng-repeat="site in sites" class="sitesingle">
+        <span class="name">
+            {{ site.name }}
+        </span>
+        <span ng-style="setStatusColor(site)" class="cur_http_status">
+            {{ site.cur_http_status }}
+        </span>
+        <span class="keyword_exists">
+            {{ site.keyword_exists }}
+        </span>
+        <span id="rbutton">
+            <button type="button" class="remove_site" ng-click="removeSite(site.name, $event)">
+                X
+            </button>
+        </span>
+    </li>
+</ul>

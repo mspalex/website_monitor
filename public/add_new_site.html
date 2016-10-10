@@ -1,0 +1,15 @@
+<form ng-submit="submit()" ng-controller="addNewSite" id="form_add_new_site" class="">
+    <label for="name">
+        Add the website name
+        <input id="name" name="name" ng-model="name" type="text" autofocus placeholder="Example.com" required>
+    </label>
+    <label for="url">
+        Add the website URL
+        <input id="url" name="url" ng-model="url" type="url" placeholder="www.example.com" required>
+    </label>
+    <label for="keyword">
+        Add a keyword
+        <input id="keyword" name="keyword" ng-model="keyword" type="text" placeholder="some word" required>
+    </label>
+    <input type="submit" id="submit">
+</form>

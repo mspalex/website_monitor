@@ -47,6 +47,14 @@ Here is a sample image of the interface.
 * Angular2 - 1.5.7
 * MongoDB - 3.0.9
 
+Node dependencies:
+- valid-url https://www.npmjs.com/package/valid-url
+- request
+- node-schedule
+- validator
+- mongoose
+- url
+
 ## Improvements
 
 - get whois information to get remaining time of a domain register

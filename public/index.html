@@ -1,65 +1,34 @@
 <html>
     <head>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
         <script src="javascripts/app.js"></script>
         <link rel="stylesheet" href="stylesheets/style.css">
 
         <!-- This will refresh page in every 5 seconds, change content= x to refresh page after x seconds -->
-        <meta http-equiv="refresh" content="30" />
+        <!-- <meta http-equiv="refresh" content="30" /> -->
+        <!-- <base href="#viewall" target="_blank"> -->
 
     </head>
     <body ng-app="WebMonitor">
-        <h1>Monitoring Tool</h1>
-        <div>
-            <h3 ng-controller="getAllSites"> {{ totalSites }} websites being monitored</h3>
-            <div class="listheader">
-                <div class="name">
-                    Website Name
+        <div id="content">
+
+            <div id="top_content">
+                <div id="site_title">
+                    <!-- <a href="#/"> -->
+                        <h1>Monitoring Tool</h1>
+                    <!-- </a> -->
+                    <h3 ng-controller="getAllSites"> {{ totalSites }} websites being monitored</h3>
                 </div>
-                <div class="cur_http_status">
-                    HTTP Status Code
-                </div>
-                <div class="keyword_exists">
-                    Keyword Exists ??
-                </div>
+                <nav>
+                    <li><a ng-href="#/">index</a></li>
+                    <li><a ng-href="#/newsite">add new site</a></li>
+                </nav>
             </div>
+
+            <br>
+
+            <ng-view></ng-view>
         </div>
-        <ul ng-controller="getAllSites" id="sitelist">
-            <li ng-repeat="site in sites" class="sitesingle">
-                <span class="name">
-                    {{ site.name | uppercase }}
-                </span>
-                <span ng-style="setStatusColor(site)" class="cur_http_status">
-                    {{ site.cur_http_status }}
-                </span>
-                <span class="keyword_exists">
-                    {{ site.keyword_exists }}
-                </span>
-            </li>
-        </ul>
-
-        <button
-            id="toggle"
-            ng-controller="toggleFormView"
-            ng-click="toggle()"
-            ng-bind-html="messageToggleButton">
-        </button>
-
-        <form ng-submit="submit()" ng-controller="addNewSite" id="form_add_new_site" class="ng-hide">
-            <label for="name">
-                Add the website name
-                <input id="name" name="name" ng-model="name" type="text" autofocus placeholder="Example.com" required>
-            </label>
-            <label for="url">
-                Add the website URL
-                <input id="url" name="url" ng-model="url" type="text" placeholder="www.example.com" required>
-            </label>
-            <label for="keyword">
-                Add a keyword
-                <input id="keyword" name="keyword" ng-model="keyword" type="text" placeholder="some word" required>
-            </label>
-            <input type="submit" id="submit">
-        </form>
-
     </body>
 </html>
