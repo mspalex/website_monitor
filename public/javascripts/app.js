@@ -53,8 +53,8 @@ app.controller('addNewSite', ['$scope','$http','$window', function($scope, $http
     API interfacing Angular controller to GET ALL WEBSITES FROM DATABASE
 */
 app.controller('getAllSites', ['$scope','$http','$rootScope','$window', function($scope, $http, $rootScope, $window) {
-    $scope.sites = [];
 
+    $scope.sites = [];
     $http.get(GET_ALL)
         .success(function(data, status) {
             $scope.sites = data;
@@ -100,7 +100,7 @@ app.controller('getAllSites', ['$scope','$http','$rootScope','$window', function
 
     $scope.removeSite = function (sitename) {
         // console.log("DEBUG angular remove request: "+sitename);
-        var deleteUser = $window.confirm('Confir the deletion of the site '+sitename+ "???");
+        var deleteUser = $window.confirm('Confir the deletion of the site ' + sitename + "???");
 
         if (deleteUser) {
             var data = {name: sitename};
