@@ -1,3 +1,8 @@
+/*
+
+    THIS FILE CONTAINS THE CRUD HTTP REST API TO SERVE SITES
+
+*/
 
 
 var express = require('express');
@@ -10,9 +15,6 @@ var validurl = require('valid-url');
 var whoisTOOL = require('../tools/whois.js');
 var httpTOOL = require('../tools/http_get.js');
 
-/*
-    THIS FILE CONTAINS THE CRUD HTTP REST API TO SERVE SITES
-*/
 
 // GET ALL sites listing. - READ
 router.get('/', function(req, res, next) {
@@ -100,7 +102,7 @@ router.post('/new', function(req, res, next) {
 });
 
 // REMOVE a site - DELETE
-// because angularjs is not sending body on delete http requests,
+// because angularjs http client is not sending body on delete http requests,
 // source is going back to having a post instead of a delete
 //
 // router.delete('/remove',function(req, res, next) {
@@ -108,9 +110,7 @@ router.post('/new', function(req, res, next) {
 router.post('/remove',function(req, res, next) {
 
     var searchName = req.body.name;
-    var searchName1 = req.params.name;
-    console.log("DEBUG sites route delete : "+ searchName);
-    console.log("DEBUG sites route delete 1: "+ searchName1);
+    // console.log("DEBUG sites route delete : "+ searchName);
     mongoose.model('Site').remove(
         {name: searchName},
         function (err, msg) {

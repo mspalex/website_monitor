@@ -23,20 +23,6 @@ module.exports = {
     verifySingleSiteStatus: function (site){ // receives the Site Schema object
         verifySite(site);
     }
-    // ,
-    // validateURLliveness: function(url){ // check if url is up and running
-    //     request( url, function (error, res, body) {
-    //         if(!error && res.statusCode >= 200 && res.statusCode < 500){
-    //             console.log("DEBUG - live URL");
-    //             console.log(error);
-    //             return true;
-    //         } else {
-    //             console.log("DEBUG - dead URL");
-    //             console.log(error);
-    //             return false;
-    //         }
-    //     });
-    // }
 }
 
 /*
@@ -75,7 +61,7 @@ function verifySite(site){
             mongoose.model('Site').findOneAndUpdate(
                 { name: reqSITE.name },
                 { $set: { cur_http_status: status_temp, keyword_exists: kword_temp} }, function (err, site) {
-                    if (err) console.error("ERROR - updating database record : " + err);
+                    if (err) console.error("ERROR - updating database record : " + err.message);
                     // else console.log("update sucessfull of : " + site.name);
                 }
             );
@@ -83,7 +69,4 @@ function verifySite(site){
             console.log("\n1111111111111111111111111111\nDEBUG\n\n"+error.stack+"\n111111111111111111111111111111111111111111");
         }
     });
-    // .on('error',function(err){
-    //     console.log("\n22222222222222222222222222222222222\nDEBUG\n\n"+err.stack+"\n22222222222222222222222222222222222");
-    // });
 };

@@ -3,9 +3,14 @@
 This is a very simple web application to monitor the status of websites, built with the full *MEAN (Mongo,Express,Angular,Node)* application stack.
 
 Features:
-- Web interface to add, remove and edit websites to follow,
+- Web interface to add, remove and edit websites to monitor,
 - Monitor the HTTP Status Code of each site
 - View the status of Keyword search on each site
+- periodic server update of the information
+
+- User cannot insert invalid information, such as malformed or empty fields
+- websites that are not live cannot be inserted
+-
 
 Since i built this thing to be hosted on my home server, there are no logins or anything that resembles security measures.
 
@@ -25,7 +30,7 @@ Commands required to get the app running the first time, assuming that Node.js a
 		# git clone ...
 		cd <reponame>
 		npm init # creates the folder node_modules
-		npm install # installs the dependencies
+		npm install # install project dependencies
 
 		# start the application
 		npm start
@@ -38,7 +43,9 @@ How the Node connects with MongoDB on *localhost*
 
 Here is a sample image of the interface.
 
-![website_mon_screenshot](https://cloud.githubusercontent.com/assets/4175297/19163838/756b1154-8bf5-11e6-9124-f1c7242d94e6.png)
+Index panel             |  Add new site Form
+:-------------------------:|:-------------------------:
+![](https://cloud.githubusercontent.com/assets/4175297/19244517/809576e2-8f14-11e6-8dbc-18ff92213baf.png)  |  ![](https://cloud.githubusercontent.com/assets/4175297/19244518/8097e17a-8f14-11e6-97c7-75484249e159.png)
 
 ## Built With
 

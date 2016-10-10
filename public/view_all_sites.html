@@ -19,8 +19,8 @@
         <span ng-style="setStatusColor(site)" class="cur_http_status">
             {{ site.cur_http_status }}
         </span>
-        <span class="keyword_exists">
-            {{ site.keyword_exists }}
+        <span ng-style="setKwordColor(site)" class="keyword_exists">
+            {{ site.keyword_exists | uppercase }}
         </span>
         <span id="rbutton">
             <button type="button" class="remove_site" ng-click="removeSite(site.name, $event)">

@@ -66,7 +66,7 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.send(err.message);
-    console.log(err.message);
+    console.log(err.stack);
   });
 }
 
@@ -78,7 +78,10 @@ app.use(function(err, req, res, next) {
   console.log(err.message);
 });
 
-//periodic execution of all websites
+/*
+    periodic execution of update function
+    - keeps the database information updated automatically
+*/
 var j = schedule.scheduleJob('* * * * *', function(){
     httpTOOL.verifyAllSitesStatus();
     // console.log("DEBUG scheduled task - verifyAllSitesStatus()");
